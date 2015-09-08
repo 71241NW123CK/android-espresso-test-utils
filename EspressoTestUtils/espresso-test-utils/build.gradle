@@ -25,7 +25,6 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -39,17 +38,9 @@ version = '1.0.0'
 group = 'party.treesquaredcode.android'
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile ('com.android.support.test:runner:0.3') {
-        exclude module: 'support-annotations'
-    }
-    compile ('com.android.support.test:rules:0.3') {
-        exclude module: 'support-annotations'
-    }
-    compile ('com.android.support.test.espresso:espresso-core:2.2') {
-        exclude module: 'support-annotations'
-    }
-    compile 'com.squareup.spoon:spoon-client:1.1.9'
+    provided 'com.android.support:appcompat-v7:23.0.0'
+
+    provided 'com.android.support.test.espresso:espresso-core:2.2'
 }
 
 def publishPath = new File("../publish/maven")
